@@ -1,0 +1,44 @@
+.PreparationItem {
+	width: auto; /* Змінено ширину на auto, щоб елементи розтягувалися на всю ширину контейнера */
+	flex: 0 0 30%; /* Задаємо початковий розмір елемента і дозволяємо йому не розтягуватися та не зменшуватися */
+	height: 300px;
+	border: 1px solid black;
+	border-radius: 10px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	margin-bottom: 20px;
+}
+
+.PreparationItem_img {
+	display: flex;
+	justify-content: center;
+	border: 1px solid black;
+	border-radius: 10px;
+	height: 80%;
+	margin: 5px;
+	overflow: hidden;
+}
+
+.PreparationItem_img img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.preparationItem_information {
+	display: flex;
+	justify-content: space-between;
+	margin: 5px;
+}
+
+.preparationItem_name {
+	font-size: 20px;
+}
+
+.preparationItem_button button {
+	border: 1px solid black;
+	background-color: white;
+	border-radius: 10px;
+	width: 100%;
+}

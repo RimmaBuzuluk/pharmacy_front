@@ -1,0 +1,23 @@
+.Shop {
+	display: flex;
+	margin: 1%;
+	height: 100%;
+}
+
+.shopItems {
+	width: 100%;
+}
+
+.Shop_Item {
+	margin-left: 10px;
+	border: 1px solid black;
+	border-radius: 10px;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 10px;
+	padding: 10px;
+
+	justify-content: space-around;
+	overflow-y: auto;
+	max-height: 90vh;
+}

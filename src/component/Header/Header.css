@@ -1,0 +1,14 @@
+.Header {
+	display: flex;
+	justify-content: space-between;
+	background-color: azure;
+	height: 30px;
+}
+
+.rout {
+	display: flex;
+}
+
+.rout_item {
+	margin-left: 10px;
+}
