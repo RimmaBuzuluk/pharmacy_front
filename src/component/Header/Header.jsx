@@ -18,7 +18,7 @@ function Header() {
 					Shopping Cart
 				</Link>
 			</div>
-			<div>registter</div>
+			<Link to='/auth'>auth</Link>
 		</div>
 	);
 }

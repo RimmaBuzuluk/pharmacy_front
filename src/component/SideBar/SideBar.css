@@ -1,7 +1,6 @@
 .SideBar {
 	height: auto;
 	width: 35vh;
-	/* margin-top: 10px; */
 	overflow: hidden;
 
 	border: 1px solid black;
@@ -13,8 +12,3 @@
 
 	position: sticky;
 }
-
-/* .SideBar_title {
-	font-size: 200%;
-	margin-top: 5%;
-} */

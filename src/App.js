@@ -4,6 +4,8 @@ import Header from './component/Header/Header';
 import SideBar from './component/SideBar/SideBar';
 import Shop from './page/Shop/Shop';
 import Cart from './page/Cart/Cart';
+import Auth from './page/auth/Auth';
+import Register from './component/register/Register';
 
 function App() {
 	return (
@@ -14,6 +16,8 @@ function App() {
 					<Routes>
 						<Route path='/' element={<Shop />} />
 						<Route path='/cart' element={<Cart />} />
+						<Route path='/register' element={<Register />} />
+						<Route path='/auth' element={<Auth />} />
 					</Routes>
 				</div>
 			</div>

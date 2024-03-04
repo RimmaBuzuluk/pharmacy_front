@@ -1,0 +1,58 @@
+.CartPreparationItem {
+	display: flex;
+	justify-content: space-between;
+	border: 1px solid black;
+	border-radius: 10px;
+	margin: 2%;
+	padding: 2%;
+}
+
+.CartPreparationItem_img {
+	display: flex;
+	justify-content: center;
+	border: 1px solid black;
+	border-radius: 10px;
+	height: 80px;
+	width: 60%;
+
+	overflow: hidden;
+}
+
+.CartPreparationItem_img img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.CartPreparationItem_inform {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.counter {
+	width: 80%;
+	display: flex;
+	padding: 2px;
+	border-radius: 10px;
+	justify-content: space-around;
+	border: 1px solid black;
+}
+.counter input {
+	width: 80%;
+	border: none;
+	border-radius: 10px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.count_buts {
+	display: flex;
+	flex-direction: column;
+	border-radius: 10px;
+}
+.count_buts button {
+	background-color: white;
+	border: none;
+}

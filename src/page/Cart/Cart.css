@@ -1,0 +1,26 @@
+.Cart_page {
+	display: flex;
+	justify-content: space-between;
+	margin: 5%;
+}
+
+.cart_registration {
+	border: 1px solid black;
+	border-radius: 10px;
+	height: 50vh;
+	width: 45%;
+}
+
+.cart_menu {
+	border: 1px solid black;
+	border-radius: 10px;
+	height: 50vh;
+	width: 45%;
+}
+
+.cart_data {
+	margin: 5%;
+
+	display: flex;
+	justify-content: end;
+}
