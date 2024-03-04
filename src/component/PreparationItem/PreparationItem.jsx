@@ -1,7 +1,12 @@
+import { useSelector } from 'react-redux';
 import './PreparationItem.css';
+import { selectIsAuth } from '../../store/slice/auth';
+import { useNavigate } from 'react-router-dom';
 
-function PreparationItem({ preparation }) {
-	// console.log(preparation._id); // Отримаємо id
+function PreparationItem({ preparation, onClick }) {
+	const handlItem = event => {
+		onClick(preparation._id);
+	};
 	return (
 		<div className='PreparationItem'>
 			<div className='PreparationItem_img'>
@@ -10,7 +15,7 @@ function PreparationItem({ preparation }) {
 			<div className='preparationItem_information'>
 				<div className='preparationItem_name'>{preparation.preparationName}</div>
 				<div className='preparationItem_button'>
-					<button>add to Cart</button>
+					<button onClick={handlItem}>add to Cart</button>
 				</div>
 			</div>
 		</div>

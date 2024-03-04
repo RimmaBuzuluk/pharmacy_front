@@ -6,8 +6,11 @@ import Shop from './page/Shop/Shop';
 import Cart from './page/Cart/Cart';
 import Auth from './page/auth/Auth';
 import Register from './component/register/Register';
+import { selectIsAuth } from './store/slice/auth';
+import { useSelector } from 'react-redux';
 
 function App() {
+	const isAuth = useSelector(selectIsAuth);
 	return (
 		<Router>
 			<div className='App'>

@@ -5,8 +5,8 @@ import { fetchAuth, selectIsAuth } from '../../store/slice/auth';
 import { Navigate } from 'react-router-dom';
 
 function Auth() {
-	const [email, setEmail] = useState('');
-	const [password, setPassword] = useState('');
+	const [email, setEmail] = useState('test@gmail.com');
+	const [password, setPassword] = useState('12345678');
 	const dispatch = useDispatch();
 	const isAuth = useSelector(selectIsAuth);
 
@@ -21,7 +21,6 @@ function Auth() {
 	const onSubmit = async () => {
 		const values = { email, password }; // Створення об'єкту з email та password
 		const data = await dispatch(fetchAuth(values));
-		console.log(data.payload);
 	};
 
 	if (isAuth) {

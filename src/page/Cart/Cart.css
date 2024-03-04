@@ -1,26 +1,44 @@
+.Cart {
+	height: 90vh;
+	padding: 1%;
+}
+
 .Cart_page {
 	display: flex;
 	justify-content: space-between;
-	margin: 5%;
 }
 
 .cart_registration {
 	border: 1px solid black;
 	border-radius: 10px;
-	height: 50vh;
+	height: 75vh;
 	width: 45%;
 }
 
 .cart_menu {
 	border: 1px solid black;
 	border-radius: 10px;
-	height: 50vh;
+	height: 75vh;
 	width: 45%;
+
+	overflow-y: auto;
 }
 
 .cart_data {
 	margin: 5%;
-
 	display: flex;
 	justify-content: end;
+	align-items: center;
+}
+
+.cart_totalPrice {
+	margin-right: 20px;
+}
+
+.submitButton {
+	width: 20%;
+	height: 30px;
+	background-color: white;
+	border: 1px solid black;
+	border-radius: 10px;
 }
