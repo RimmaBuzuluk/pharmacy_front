@@ -26,3 +26,26 @@
 	border: 1px solid black;
 	border-radius: 5px;
 }
+
+.registerButt button {
+	padding: 15px 25px;
+	font-size: 24px;
+	text-align: center;
+	cursor: pointer;
+	outline: none;
+	color: #fff;
+	background-color: #4caf50;
+	border: none;
+	border-radius: 15px;
+	box-shadow: 0 9px #999;
+}
+
+.registerButt button:hover {
+	background-color: #3e8e41;
+}
+
+.registerButt button:active {
+	background-color: #3e8e41;
+	box-shadow: 0 5px #666;
+	transform: translateY(4px);
+}
