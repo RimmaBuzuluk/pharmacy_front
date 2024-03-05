@@ -4,20 +4,18 @@ import { selectIsAuth } from '../../store/slice/auth';
 import { useState } from 'react';
 import axios from '../../axios';
 
-function CartPreparationItem({ cartItem }) {
+function CartPreparationItem({ cartItem, render }) {
 	const isAuth = useSelector(selectIsAuth);
 	const [quantity, setQuantity] = useState(cartItem.quantity);
 	const userData = useSelector(state => state.auth.data);
 
-	console.log(userData.cartId);
 	const increaseQuantity = () => {
 		setQuantity(quantity + 1);
 		// Відправка запиту на збільшення кількості
-		console.log(quantity);
 		axios
 			.put(`/carts/${userData.cartId}/items/${cartItem._id}`, { quantity: quantity + 1 })
 			.then(response => {
-				// Оновлення стану або виконання інших необхідних дій після успішної відповіді
+				render();
 			})
 			.catch(error => {
 				console.error('Сталася помилка при збільшенні кількості елементів у корзині:', error);
@@ -31,7 +29,7 @@ function CartPreparationItem({ cartItem }) {
 		axios
 			.put(`/carts/${userData.cartId}/items/${cartItem._id}`, { quantity: quantity - 1 })
 			.then(response => {
-				// Оновлення стану або виконання інших необхідних дій після успішної відповіді
+				render();
 			})
 			.catch(error => {
 				console.error('Сталася помилка при зменшенні кількості елементів у корзині:', error);
@@ -39,10 +37,10 @@ function CartPreparationItem({ cartItem }) {
 	};
 
 	const handleQuantityChange = event => {
+		render();
 		setQuantity(event.target.value);
 	};
 
-	console.log(quantity);
 	return (
 		<div className='CartPreparationItem'>
 			{isAuth ? (

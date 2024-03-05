@@ -12,14 +12,11 @@ function Cart() {
 	const cartId = userData ? userData.cartId : null; // Перевірка на наявність userData
 	const [cartItem, setCartItem] = useState([]);
 	const [totalPrice, setTotalPrice] = useState(0);
+	const [renderTotal, setRenderToral] = useState(0);
 
-	function calculateTotalPrice(items) {
-		let total = 0;
-		items.forEach(item => {
-			total += item.totalPrice;
-		});
-		return total;
-	}
+	const render = () => {
+		setRenderToral(renderTotal + 1);
+	};
 
 	useEffect(() => {
 		if (cartId) {
@@ -29,15 +26,16 @@ function Cart() {
 			axios
 				.get(url)
 				.then(response => {
-					setCartItem(response.data);
-					const total = calculateTotalPrice(response.data);
-					setTotalPrice(total);
+					setCartItem(response.data.items);
+					// const total = calculateTotalPrice(response.data);
+					setTotalPrice(response.data.totalPrice);
+					console.log(totalPrice);
 				})
 				.catch(error => {
 					console.error('Сталася помилка при виконанні запиту:', error); // Виводимо помилку в консоль
 				});
 		}
-	}, [isAuth, cartId]);
+	}, [isAuth, cartId, renderTotal]);
 
 	return (
 		<div className='Cart'>
@@ -52,7 +50,7 @@ function Cart() {
 
 				<div className='cart_menu'>
 					{cartItem.map(cartItem => (
-						<CartPreparationItem cartItem={cartItem} />
+						<CartPreparationItem cartItem={cartItem} render={render} />
 					))}
 				</div>
 			</div>
