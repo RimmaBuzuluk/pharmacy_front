@@ -63,7 +63,7 @@ function Cart() {
 
 				<div className='cart_menu'>
 					{cartItem.map(cartItem => (
-						<CartPreparationItem cartItem={cartItem} render={render} />
+						<CartPreparationItem cartId={cartId} cartItem={cartItem} render={render} />
 					))}
 				</div>
 			</div>

@@ -68,3 +68,13 @@
 	border: none;
 	color: black;
 }
+
+.deleteItem {
+	width: 100%;
+	display: flex;
+	justify-content: end;
+}
+
+.deleteItem img {
+	width: 20px;
+}

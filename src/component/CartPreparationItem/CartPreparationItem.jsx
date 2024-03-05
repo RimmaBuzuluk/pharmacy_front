@@ -4,7 +4,7 @@ import { selectIsAuth } from '../../store/slice/auth';
 import { useState } from 'react';
 import axios from '../../axios';
 
-function CartPreparationItem({ cartItem, render }) {
+function CartPreparationItem({ cartItem, render, cartId }) {
 	const isAuth = useSelector(selectIsAuth);
 	const [quantity, setQuantity] = useState(cartItem.quantity);
 	const userData = useSelector(state => state.auth.data);
@@ -38,10 +38,19 @@ function CartPreparationItem({ cartItem, render }) {
 		}
 	};
 
+	const onClickDelete = () => {
+		axios
+			.delete(`carts/${cartId}/items/${cartItem._id}`)
+			.then(response => {
+				render();
+			})
+			.catch(error => {
+				console.error('Сталася помилка при зменшенні кількості елементів у корзині:', error);
+			});
+	};
+
 	return (
 		<div className='CartPreparationItem'>
-			{/* {isAuth ? ( */}
-			{/* <> */}
 			<div className='CartPreparationItem_img'>
 				<img src={`${cartItem.preparation.preparationImg}`} />
 			</div>
@@ -61,10 +70,10 @@ function CartPreparationItem({ cartItem, render }) {
 						</button>
 					</div>
 				</div>
+				<div onClick={onClickDelete} className='deleteItem'>
+					<img src='https://cdn-icons-png.flaticon.com/512/1799/1799391.png' />
+				</div>
 			</div>
-			{/* </> */}
-			{/* // ) : ( // <div>Для того щоб зберегти продукт в корзину необхідно зареєстуваись</div>
-			// )} */}
 		</div>
 	);
 }
