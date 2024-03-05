@@ -23,17 +23,19 @@ function CartPreparationItem({ cartItem, render }) {
 	};
 
 	const decreaseQuantity = () => {
-		setQuantity(quantity - 1);
+		if (quantity > 1) {
+			setQuantity(quantity - 1);
 
-		// Відправка запиту на зменшення кількості
-		axios
-			.put(`/carts/${userData.cartId}/items/${cartItem._id}`, { quantity: quantity - 1 })
-			.then(response => {
-				render();
-			})
-			.catch(error => {
-				console.error('Сталася помилка при зменшенні кількості елементів у корзині:', error);
-			});
+			// Відправка запиту на зменшення кількості
+			axios
+				.put(`/carts/${userData.cartId}/items/${cartItem._id}`, { quantity: quantity - 1 })
+				.then(response => {
+					render();
+				})
+				.catch(error => {
+					console.error('Сталася помилка при зменшенні кількості елементів у корзині:', error);
+				});
+		}
 	};
 
 	const handleQuantityChange = event => {
@@ -52,7 +54,7 @@ function CartPreparationItem({ cartItem, render }) {
 						<div className='CartPreparationItem_name'>{cartItem.preparation.preparationName}</div>
 						<div className='CartPreparationItem_price'>price:{cartItem.preparation.preparationPrice}</div>
 						<div className='counter'>
-							<input className='counterInput' onChange={handleQuantityChange} value={quantity} />
+							<div className='counterInput'>{quantity}</div>
 							<div className='count_buts'>
 								<button className='decrement' onClick={decreaseQuantity}>
 									-
