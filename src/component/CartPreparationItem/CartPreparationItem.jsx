@@ -38,37 +38,33 @@ function CartPreparationItem({ cartItem, render }) {
 		}
 	};
 
-	const handleQuantityChange = event => {
-		render();
-		setQuantity(event.target.value);
-	};
-
 	return (
 		<div className='CartPreparationItem'>
-			{isAuth ? (
-				<>
-					<div className='CartPreparationItem_img'>
-						<img src={`${cartItem.preparation.preparationImg}`} />
+			{/* {isAuth ? ( */}
+			{/* <> */}
+			<div className='CartPreparationItem_img'>
+				<img src={`${cartItem.preparation.preparationImg}`} />
+			</div>
+			<div className='CartPreparationItem_inform'>
+				<div className='CartPreparationItem_infText'>
+					<div className='CartPreparationItem_name'>{cartItem.preparation.preparationName}</div>
+					<div className='CartPreparationItem_price'>price:{cartItem.preparation.preparationPrice}</div>
+				</div>
+				<div className='counter'>
+					<div className='counterInput'>{quantity}</div>
+					<div className='count_buts'>
+						<button className='increment' onClick={increaseQuantity}>
+							+
+						</button>
+						<button className='decrement' onClick={decreaseQuantity}>
+							-
+						</button>
 					</div>
-					<div className='CartPreparationItem_inform'>
-						<div className='CartPreparationItem_name'>{cartItem.preparation.preparationName}</div>
-						<div className='CartPreparationItem_price'>price:{cartItem.preparation.preparationPrice}</div>
-						<div className='counter'>
-							<div className='counterInput'>{quantity}</div>
-							<div className='count_buts'>
-								<button className='decrement' onClick={decreaseQuantity}>
-									-
-								</button>
-								<button className='increment' onClick={increaseQuantity}>
-									+
-								</button>
-							</div>
-						</div>
-					</div>
-				</>
-			) : (
-				<div>Для того щоб зберегти продукт в корзину необхідно зареєстуваись</div>
-			)}
+				</div>
+			</div>
+			{/* </> */}
+			{/* // ) : ( // <div>Для того щоб зберегти продукт в корзину необхідно зареєстуваись</div>
+			// )} */}
 		</div>
 	);
 }

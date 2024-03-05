@@ -1,8 +1,9 @@
 .Header {
 	display: flex;
 	justify-content: space-between;
-	background-color: azure;
-	height: 30px;
+	background-color: #3e8e41;
+	height: 20%;
+	color: #fff;
 }
 
 .rout {
@@ -11,4 +12,10 @@
 
 .rout_item {
 	margin-left: 10px;
+}
+
+button {
+	background-color: #3e8e41;
+	border: none;
+	color: #fff;
 }

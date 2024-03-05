@@ -1,11 +1,22 @@
 .MenuItem {
 	border: 1px solid black;
 	border-radius: 10px;
-
+	color: #fff;
+	background-color: #4caf50;
 	width: 90%;
 	height: auto;
 	margin: 5px 0;
 	display: flex;
 	justify-content: center;
 	align-items: center;
+}
+
+.MenuItem:hover {
+	background-color: #3e8e41;
+}
+
+.MenuItem:active {
+	background-color: #3e8e41;
+	box-shadow: 0 5px #666;
+	transform: translateY(4px);
 }

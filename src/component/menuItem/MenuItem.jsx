@@ -10,7 +10,7 @@ function MenuItem({ value }) {
 
 	return (
 		<button className='MenuItem' onClick={handelClick}>
-			<div>{value.value}</div>
+			{value.value}
 		</button>
 	);
 }
