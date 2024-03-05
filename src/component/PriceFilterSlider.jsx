@@ -9,7 +9,6 @@ const PriceFilterSlider = ({ setPrice }) => {
 	const handlePriceChange = value => {
 		setPriceRange(value);
 		setPrice(value);
-		// onPriceChange(value);
 	};
 
 	return (

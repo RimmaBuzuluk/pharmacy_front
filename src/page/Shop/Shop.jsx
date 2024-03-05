@@ -14,13 +14,16 @@ function Shop() {
 	const [price, setPrice] = useState([]);
 	const isAuth = useSelector(selectIsAuth);
 	const preparationType = useSelector(state => state.typeFilter.preparationType);
+	const userData = useSelector(state => state.auth.data);
+
+	console.log(userData);
 
 	const handleAddToCart = itemId => {
 		if (!isAuth) {
 			alert('Щоб додати товар в корзину ви маєте авторизуватись');
 		} else {
 			const fields = { itemId };
-			axios.post(`/carts/65e5ecaec3626d921b455713/items`, fields);
+			// axios.post(`/carts/${userData.cartId}/items`, fields);
 		}
 	};
 
@@ -46,6 +49,8 @@ function Shop() {
 				console.error('Сталася помилка при виконанні запиту:', error); // Виводимо помилку в консоль
 			});
 	}, [preparationType, price]);
+
+	console.log(isAuth);
 
 	return (
 		<div className='Shop'>

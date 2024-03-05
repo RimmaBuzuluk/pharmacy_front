@@ -2,11 +2,12 @@ import React, { useState } from 'react';
 import './Register.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchRegister, selectIsAuth } from '../../store/slice/auth';
-import { Navigate } from 'react-router-dom';
+import { Navigate, useNavigate } from 'react-router-dom';
 
 function Register() {
 	const dispatch = useDispatch();
 	const isAuth = useSelector(selectIsAuth);
+	const navigate = useNavigate();
 
 	const [name, setName] = useState('Римма Бузулук');
 	const [email, setEmail] = useState('buzuluk@gmail.com');
@@ -38,20 +39,17 @@ function Register() {
 		const values = { name, number, address, email, password };
 		const data = await dispatch(fetchRegister(values));
 
-		// console.log(data);
+		if (!data.payload) {
+			return alert('не вдалось зареєструватись');
+		}
 
-		// if (!data.payload) {
-		// 	return alert('не вдалось зареєструватись');
-		// }
-
-		// if ('token' in data.payload) {
-		// 	window.localStorage.setItem('token', data.payload.token);
-		// }
+		if ('token' in data.payload) {
+			window.localStorage.setItem('token', data.payload.token);
+			navigate('/');
+		}
 	};
 
-	if (isAuth) {
-		return <Navigate to='/' />;
-	}
+	console.log(isAuth);
 
 	return (
 		<div className='Registration'>
