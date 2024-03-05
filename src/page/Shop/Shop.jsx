@@ -23,7 +23,7 @@ function Shop() {
 			alert('Щоб додати товар в корзину ви маєте авторизуватись');
 		} else {
 			const fields = { itemId };
-			// axios.post(`/carts/${userData.cartId}/items`, fields);
+			axios.post(`/carts/${userData.cartId}/items`, fields);
 		}
 	};
 
