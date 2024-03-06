@@ -40,8 +40,9 @@ function Cart() {
 	}, [isAuth, cartId, renderTotal]);
 
 	const onClickSubmit = () => {
+		console.log(cartId);
 		axios
-			.post(`/order/${cartId}`)
+			.post(`/order/${cartId}`) // Розкоментуйте цей рядок
 			.then(response => {
 				navigate('/');
 			})
