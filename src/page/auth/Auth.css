@@ -14,12 +14,12 @@
 	display: flex;
 	flex-direction: column;
 
-	width: 50%;
+	width: 75%;
 }
 
 .auth_items input {
 	/* width: 200%; */
-	height: 10vh;
+	height: 7vh;
 	margin-bottom: 5%;
 
 	border-radius: 10px;
