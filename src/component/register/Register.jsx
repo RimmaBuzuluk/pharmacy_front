@@ -9,11 +9,11 @@ function Register() {
 	const isAuth = useSelector(selectIsAuth);
 	const navigate = useNavigate();
 
-	const [name, setName] = useState('Римма Бузулук');
-	const [email, setEmail] = useState('buzuluk@gmail.com');
-	const [number, setNumber] = useState('0953272213');
-	const [address, setAddress] = useState('lalal');
-	const [password, setPassword] = useState('12345678');
+	const [name, setName] = useState('');
+	const [email, setEmail] = useState('');
+	const [number, setNumber] = useState('');
+	const [address, setAddress] = useState('');
+	const [password, setPassword] = useState('');
 
 	const handleNameChange = e => {
 		setName(e.target.value);

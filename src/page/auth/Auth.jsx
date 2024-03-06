@@ -5,8 +5,8 @@ import { fetchAuth, selectIsAuth } from '../../store/slice/auth';
 import { Navigate, useNavigate } from 'react-router-dom';
 
 function Auth() {
-	const [email, setEmail] = useState('test@gmail.com');
-	const [password, setPassword] = useState('12345678');
+	const [email, setEmail] = useState('');
+	const [password, setPassword] = useState('');
 	const dispatch = useDispatch();
 	const isAuth = useSelector(selectIsAuth);
 	const navigate = useNavigate();

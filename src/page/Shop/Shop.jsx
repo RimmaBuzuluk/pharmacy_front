@@ -28,7 +28,7 @@ function Shop() {
 	};
 
 	useEffect(() => {
-		let url = 'http://localhost:4444/preparation/allItem';
+		let url = '/preparation/allItem';
 		if (preparationType) {
 			url += `?preparationType=${preparationType}`;
 		}
